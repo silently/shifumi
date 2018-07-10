@@ -1,0 +1,58 @@
+small {
+  font-size: 0.85em;
+}
+.bigger {
+  font-size: 1.2em;
+}
+.lm {
+  margin-left: 2em;
+}
+.tm1 {
+  margin-top: 1em;
+}
+.tm2 {
+  margin-top: 2em;
+}
+.tm4 {
+  margin-top: 4em;
+}
+.tm50 {
+  margin-top: 50px;
+}
+.bm {
+  margin-bottom: 1em;
+}
+.bold {
+  font-weight: bold;
+}
+.nbm {
+  margin-bottom: 0;
+}
+.blocks {
+  font-family: blocks;
+}
+.contents {
+  padding: 8px 16px;
+}
+.btn-close, .btn-play {
+  position: absolute;
+  right: 8px;
+  top: 8px;
+  font-size: 1.4em;
+  @media screen and (max-width: 600px) {
+    position: fixed;
+  }
+}
+.btn-play {
+  padding-left: 2px;
+}
+ul.dashed {
+  list-style-type: none;
+}
+ul.dashed > li {
+  text-indent: -5px;
+}
+ul.dashed > li:before {
+  content: "- ";
+  text-indent: -5px;
+}

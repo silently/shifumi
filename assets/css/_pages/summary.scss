@@ -1,0 +1,44 @@
+body.summary {
+  .card-wrapper {
+    .card-contents {
+      min-width: 200px;
+      $well-size: 40px;
+      line-height: $well-size;
+      .icon {
+        display: inline-block;
+        vertical-align: bottom;
+        width: $well-size;
+        height: $well-size;
+        background: no-repeat center center;
+        background-size: $well-size $well-size;
+        margin-right: 12px;
+        &.well {
+          background-image: url(/images/w.png);
+        }
+      }
+    }
+  }
+  p {
+    margin-top: 0;
+    &.nickname {
+      margin-bottom: 4px;
+    }
+    &.winner {
+      margin-top: 10px;
+      span {
+        padding: 4px 12px;
+      }
+    }
+    &.roar {
+      margin-top: 12px;
+      font-style: italic;
+    }
+  }
+  $picture-height: 128px;
+  .picture {
+    img {
+      width: $picture-height;
+      height: $picture-height;
+    }
+  }
+}

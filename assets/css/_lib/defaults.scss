@@ -1,0 +1,61 @@
+h2 {
+  font-family: blocks;
+  font-size: 2.2em;
+  text-align: center;
+  margin: 0.6em 0;
+}
+
+.btn-large:not(.btn-floating) {
+  font-size: 1.1em;
+  padding: 0 3rem;
+}
+
+.custom-error {
+  font-size: .85em;
+  color: rgba(255, 255, 255, .7);
+  p {
+    min-height: 2em;
+  }
+}
+
+// Materialize overriding
+.center-align form p {
+  text-align: center;
+}
+
+.valign-wrapper {
+  height: 100%;
+  .row { width: 100%; }
+  > div {
+    width: 100%;
+  }
+}
+
+.picture {
+  .default {
+    color: #999;
+    background-color: #fff;
+    text-align: center;
+    border: 1px solid color("grey", "lighten-3");
+    font-family: blocks;
+  }
+}
+
+.card-ref {
+  position: absolute;
+  z-index: 10;
+  top: 50vh;
+  left: 50%;
+  .card-wrapper {
+    transform: translate(-50%, -50%);
+  }
+}
+
+.card-contents {
+  opacity: 0;
+  @extend .z-depth-2;
+  background-color: $color-alt-light;
+  text-align: center;
+  padding: 6px 12px;
+  border-radius: 3px;
+}

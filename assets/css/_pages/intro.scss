@@ -1,0 +1,90 @@
+@keyframes starter {
+    0% { opacity:1; content: "Versus"; }
+    30% { opacity:1; content: "Versus"; }
+    40% { opacity:0; }
+    50% { opacity:1; content: "Ready"; }
+    60% { opacity:0; }
+    70% { opacity:1; content: "Steady"; }
+    80% { opacity:0; }
+    90% { opacity:1; content: "Go!"; }
+    100% { opacity:1; content: "Go!"; }
+}
+
+body.intro {
+  .row {
+    margin-bottom: 0;
+  }
+  .card-contents {
+    height: 92px;
+    display: flex;
+    align-items: center;
+    span {
+      width: 33%;
+    }
+    span.vs {
+      min-width: 110px;
+      font-family: blocks;
+      font-size: 1.5em;
+      align-self: center;
+      &:before {
+        content: "versus";
+        animation-delay: 2s;
+        animation-duration: 6s;
+        animation-name: starter;
+        animation-iteration-count: 1;
+      }
+    }
+    span.me, span.opponent {
+      font-size: 1.5em;
+    }
+    span.me {
+      align-self: flex-end;
+    }
+    span.opponent {
+      align-self: flex-start;
+    }
+  }
+  .avatar {
+    .s6 {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+    .nickname {
+      font-weight: bold;
+    }
+    $picture-height: 64px;
+    .picture {
+      height: $picture-height;
+      float: right;
+      img {
+        width: $picture-height;
+        height: $picture-height;
+      }
+      .default {
+        width: $picture-height;
+        height: $picture-height;
+        line-height: $picture-height;
+        font-size: 30px;
+        transform: rotate(0.25turn);
+      }
+    }
+  }
+  table {
+    margin-top: 10px;
+    width: 100%;
+    font-variant: small-caps;
+    border-collapse: collapse;
+    td:first-child {
+      text-align: right;
+      opacity: 0.8;
+    }
+    td {
+      width: 50%;
+      padding: 1px 10px;
+    }
+  }
+  .mid-bottom hr {
+    border-top: 1px solid $color-bg-dark;
+  }
+}

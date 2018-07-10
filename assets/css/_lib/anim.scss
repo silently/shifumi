@@ -1,0 +1,105 @@
+@import "_keyframes/bounce";
+@import "_keyframes/flip";
+@import "_keyframes/other";
+
+[class^='anim-'] {
+  animation-duration: 1s;
+  animation-fill-mode: both;
+}
+
+.anim-boom-in {
+  animation-duration: 0.5s;
+  animation-name: boomIn;
+  animation-fill-mode: forwards;
+}
+
+.anim-bounce-in {
+  animation-duration: 0.75s;
+  animation-name: bounceIn;
+}
+
+.anim-bounce-in-out {
+  animation-duration: 3s;
+  animation-name: bounceInOut;
+}
+
+.anim-bounce-out {
+  animation-name: bounceOut;
+}
+
+.anim-pulse {
+  animation-duration: .5s;
+  animation-name: pulse;
+  animation-iteration-count: infinite;
+}
+
+.anim-flip {
+  animation-duration: 0.25s;
+  animation-name: flip;
+  backface-visibility: visible;
+  animation-iteration-count: 2;
+}
+
+.anim-crush {
+  animation-duration: 0.5s;
+  animation-name: crush;
+}
+
+.anim-flash {
+  animation-duration: 0.5s;
+  animation-name: flash;
+}
+
+.anim-appear {
+  animation-duration: 0.5s;
+  animation-name: appear;
+}
+
+.trans-appear {
+  transition: 200ms all linear;
+  opacity: 0.01;
+  &.launch {
+    opacity: 1;
+  }
+}
+
+.trans-hide {
+  transition: 200ms opacity ease-in;
+  opacity: 0;
+}
+.trans-delay-250 {
+  transition-delay: 250ms;
+}
+.trans-delay-500 {
+  transition-delay: 500ms;
+}
+.trans-delay-750 {
+  transition-delay: 750ms;
+}
+.trans-delay-1 {
+  transition-delay: 1s;
+}
+.anim-delay-100 {
+  animation-delay: 100ms;
+}
+.anim-delay-250 {
+  animation-delay: 250ms;
+}
+.anim-delay-500 {
+  animation-delay: 500ms;
+}
+.anim-delay-750 {
+  animation-delay: 750ms;
+}
+.anim-delay-1 {
+  animation-delay: 1s;
+}
+.anim-delay-1-5 {
+  animation-delay: 1.5s;
+}
+.anim-delay-2 {
+  animation-delay: 2s;
+}
+.anim-duration-6 {
+  animation-duration: 6s;
+}

@@ -1,0 +1,41 @@
+$picture-height: 128px;
+body.avatar {
+  img, .default {
+    cursor: pointer;
+  }
+  .default {
+    width: $picture-height;
+    height: $picture-height;
+    line-height: $picture-height;
+    font-size: 60px;
+    border: 1px solid #fff;
+    color: #fff;
+    opacity: 0.4;
+    font-family: blocks;
+    text-align: center;
+    transform: rotate(0.25turn);
+  }
+  .card-ref .card-wrapper .card-contents {
+    padding: 6px 18px;
+  }
+  .input-field label {
+    color: $color-alt-lighter;
+    font-size: 1.4em;
+  }
+  .input-field input {
+    color: $color-text-dark;
+    font-size: 1.4em;
+  }
+  .input-field input:focus:not([readonly])+label {
+    color: $color-alt-lighter;
+  }
+  .input-field input:focus:not([readonly]) {
+    border-bottom: 1px solid $color-alt-lightest;
+    box-shadow: none;
+    color: $color-alt-lightest;
+  }
+  .btn[disabled] {
+    color: #fff !important;
+    opacity: 0.7;
+  }
+}

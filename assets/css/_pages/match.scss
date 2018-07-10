@@ -1,0 +1,232 @@
+body.match {
+  main > div {
+    height: 100%;
+    padding: 0;
+  }
+
+  .card-contents {
+    box-shadow: none;
+  }
+
+  .round-wrapper {
+    font-size: 1.2em;
+    font-variant: small-caps;
+  }
+
+  .card-ref {
+    .card-contents {
+      min-width: 110px;
+      opacity: 0;
+    }
+    .score-wrapper {
+      @extend .valign-wrapper;
+      position: absolute;
+      top: 35px;
+      left: -20px;
+      height: auto;
+      transform: translate(-50%, -50%);
+      font-size: 1.2em;
+      font-variant: small-caps;
+      min-width: 90px;
+      padding: 3px 6px;
+      border-radius: 3px;
+      background-color: $color-bg-dark;
+      text-align: center;
+      &.opponent-score {
+        top: -35px;
+        left: 20px;
+        color: $color-text;
+        background-color: $color-alt-lighter;
+      }
+      .label {
+        display: inline-block;
+        margin: -1px 8px 0 6px;
+      }
+      .score {
+        font-family: blocks;
+        display: inline-block;
+        font-size: 1.4em;
+      }
+    }
+  }
+
+  // Background layer
+  $avatar-height: 48px;
+  .player-wrapper {
+    position: absolute;
+    top: 0;
+    right: 0;
+    .avatar {
+      height: $avatar-height;
+      > * {
+        width: $avatar-height;
+        height: $avatar-height;
+      }
+      .default {
+        line-height: $avatar-height;
+        color: $color-text-light;
+        font-family: blocks;
+        background-color: #fff;
+        font-size: 30px;
+        text-align: center;
+        transform: rotate(0.25turn);
+      }
+    }
+    .nickname {
+      color: #fff;
+      font-size: 1.2em;
+      padding: 2px 8px 0;
+    }
+  }
+
+  .counter-ref {
+    position: relative;
+    display: inline-block;
+    $counter-height: 32px;
+    .counter {
+      background-color: $color-bg-darker;
+      color: #fff;
+      position: absolute;
+      top: -7px;
+      right: -14px;
+      width: $counter-height;
+      height: $counter-height;
+      line-height: $counter-height;
+      border-radius: $counter-height/2;
+      font-size: 1.1em;
+    }
+    .no-well-ref {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transition: opacity 1s ease-in 1s;
+      .no-well {
+        $no-well-size: 70px;
+        width: $no-well-size;
+        height: $no-well-size;
+        line-height: $no-well-size;
+        font-size: $no-well-size - 10px;
+        position: absolute;
+        top: - $no-well-size / 2;
+        left: - $no-well-size / 2;
+      }
+    }
+    // when winning with well, wait the anim-flip to finish before displaying none remains
+    .anim-flip .no-well-ref {
+      opacity: 0;
+    }
+  }
+
+  .shape-wrapper {
+    .shape {
+      background-color: $color-button;
+      display: inline-block;
+      width: 90px;
+      height: 90px;
+      border-radius: 45px;
+      overflow: visible;
+      transition: 100ms opacity linear, 100ms transform linear;
+
+      @media #{$small-phone} {
+        width: 60px;
+        height: 60px;
+        border-radius: 30px;
+      }
+      .icon {
+        display: block;
+        width: 100%;
+        height: 100%;
+        background: no-repeat center center;
+        background-size: 42px 42px;
+        @media #{$small-phone} {
+          background-size: 28px 28px;
+        }
+        &.rock {
+          background-image: url(/images/r.png);
+        }
+        &.paper {
+          background-image: url(/images/p.png);
+        }
+        &.scissors {
+          background-image: url(/images/s.png);
+        }
+        &.well {
+          background-image: url(/images/w.png);
+        }
+      }
+    }
+  }
+
+  .me {
+    .shape-wrapper .shape {
+      &.inactive {
+        opacity: 0.5;
+        transform: scale3d(0.9, 0.9, 0.9);
+      }
+      &.active {
+        opacity: 1;
+        transform: scale3d(1, 1, 1);
+      }
+      &[disabled] {
+        background-color: $color-button !important;
+        opacity: 0.5;
+        transform: scale3d(0.9, 0.9, 0.9);
+      }
+      &.thrown {
+        background-color: #0dd2ad !important;
+        opacity: 1;
+        transform: scale3d(1, 1, 1);
+      }
+    }
+  }
+
+  .valign-wrapper {
+    .valign-content {
+      padding-top: 100px;
+    }
+  }
+
+  .opponent {
+    .player-wrapper {
+      top: auto;
+      bottom: 0;
+      left: 0;
+      .avatar .default {
+        border-left: 1px solid $color-text-lighter;
+        border-top: 1px solid $color-text-lighter;
+      }
+      .nickname {
+        color: $color-text-dark;
+        padding: 20px 8px 0;
+      }
+    }
+
+
+    .valign-wrapper {
+      .valign-content {
+        padding-top: 0;
+        padding-bottom: 80px;
+      }
+    }
+
+    .counter-ref {
+      .counter {
+        color: $color-text;
+        background-color: $color-alt-lighter;
+      }
+    }
+
+    .shape-wrapper .shape {
+      &[disabled] {
+        background-color: $color-alt-lighter !important;
+        opacity: .5;
+        transform: scale3d(0.9, 0.9, 0.9);
+      }
+      &.thrown {
+        background-color: $color-alt !important;
+        opacity: 1;
+        transform: scale3d(1, 1, 1);
+      }
+    }
+  }
+}

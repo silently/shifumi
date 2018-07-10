@@ -1,0 +1,97 @@
+$footer-height: 64px;
+
+main {
+  height: calc(100% - #{$footer-height});//used for vertical centering (e.g. nickname.js)
+  flex: 1 0 auto;//used for sticky footer
+}
+
+@media screen and (max-width: 600px) {
+  // editorial pages
+  main {
+    height: 100%;
+    padding-bottom: $footer-height + 40px;
+  }
+  body.play, body.home {
+    main {
+      // play full area
+      padding: 0;
+    }
+  }
+}
+
+footer {
+  .toggle-container {
+    .toggle {
+      display: none;
+      color: #fff;
+      background-color: $color-bg-dark;
+      &:hover {
+        background-color: $color-bg-darker;
+      }
+    }
+    nav {
+      background-color: $color-bg-dark;
+      ul {
+        display: flex;
+        justify-content: center;
+        li.logout {
+          position: absolute;
+          right: 0;
+        }
+      }
+    }
+  }
+
+  @media screen and (max-width: 600px) {
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    .toggle-container {
+      transition: transform 400ms ease;
+      .toggle {
+        -webkit-tap-highlight-color:  rgba(255, 255, 255, 0);
+        display: block;
+        position: absolute;
+        z-index: 2;
+        cursor: pointer;
+        top: -$footer-height;
+        width: $footer-height;
+        height: $footer-height;
+        line-height: $footer-height;
+        border-top-right-radius: $footer-height;
+        font-size: 28px;
+        box-shadow: 1px -1px 1px 0 rgba(0, 0, 0, 0.07);
+        .hamburger {
+          display: inline-block;
+          margin: 26px 0 0 14px;
+          .bar {
+            display: block;
+            width: 24px;
+            height: 3px;
+            margin-bottom: 4px;
+            position: relative;
+            background: #fff;
+            border-radius: 1px;
+          }
+        }
+      }
+      &.opened {
+        transform: translate3d(0, -$footer-height, 0);
+        .toggle {
+          padding-left: 18px;
+        }
+      }
+      nav {
+        position: absolute;
+        z-index: 1;
+        top: 0;
+        height: $footer-height;
+        box-shadow: 1px -1px 1px 0 rgba(0, 0, 0, 0.07)  ;
+        ul a {
+          line-height: $footer-height;
+        }
+      }
+    }
+  }
+}

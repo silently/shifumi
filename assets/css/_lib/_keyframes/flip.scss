@@ -1,0 +1,19 @@
+@keyframes flip {
+  from,
+  40%,
+  60% {
+    animation-timing-function: linear;
+  }
+
+  from {
+    transform: rotate3d(0, 1, 0, -360deg);
+  }
+
+  40% {
+    transform: rotate3d(0, 1, 0, -190deg);
+  }
+
+  60% {
+    transform: rotate3d(0, 1, 0, -170deg);
+  }
+}

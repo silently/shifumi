@@ -1,0 +1,21 @@
+$color-bg: color("red", "darken-1");
+$color-bg-dark: color("red", "darken-2");
+$color-bg-darker: color("red", "darken-3");
+$color-alt-bg: color("amber", "lighten-5");
+$color-alt: color("orange", "darken-1");
+$color-alt-light: color("orange", "lighten-2");
+$color-alt-lighter: color("orange", "lighten-3");
+$color-alt-lightest: color("orange", "lighten-4");
+$color-text: color("brown", "darken-1");
+$color-text-dark: color("brown", "darken-4");
+$color-text-light: color("brown", "lighten-2");
+$color-text-lighter: color("brown", "lighten-4");
+$color-button: color("teal", "base");
+
+$small-phone: "only screen and (max-width : 399px)";
+$small-phone-height: "only screen and (max-height : 599px)";
+/* usage
+@media #{$small-phone} {
+
+}
+*/

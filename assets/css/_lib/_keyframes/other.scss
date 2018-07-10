@@ -1,0 +1,44 @@
+@keyframes pulse {
+  from {
+    transform: scale3d(1, 1, 1);
+  }
+
+  30% {
+    transform: scale3d(1.04, 1.04, 1.04);
+  }
+
+  to {
+    transform: scale3d(1, 1, 1);
+  }
+}
+
+@keyframes appear {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes flash {
+  from,
+  25%,
+  50%,
+  75%,
+  to {
+    opacity: 1;
+  }
+
+  12%,
+  37%,
+  62%,
+  87% {
+    opacity: 0;
+  }
+}
+
+.flash {
+  animation-name: flash;
+}

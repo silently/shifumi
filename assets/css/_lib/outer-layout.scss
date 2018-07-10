@@ -1,0 +1,42 @@
+// Device-like shell on >600px width screens
+
+html, body {
+  height: 100%;
+}
+
+#root {
+  padding-top: 26px;
+  display: flex;
+  justify-content: center;
+}
+
+#shell.wrapper {
+  background-color: $color-bg;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 85%;
+  max-width: 800px;
+  min-height: 760px;
+  margin-bottom: 26px;
+  border-radius: 13px;
+  border: 13px solid #3e2723;
+}
+
+@media screen and (max-width: 600px) {
+  body {
+    overflow-x: hidden;
+    background-color: $color-bg;
+  }
+  #root {
+    padding: 0;
+    min-height: 100%;
+  }
+  #shell.wrapper {
+    width: 100%;
+    margin: 0;
+    border: 0;
+    border-radius: 0;
+    min-height: 100%;
+  }
+}

@@ -1,0 +1,51 @@
+#!/usr/bin/env bash
+
+APP="shifumi"
+TARGET_MIX_ENV=prod
+CLEAN_DEPLOY=true
+
+BUILD_HOST="shifumi"
+BUILD_USER="deploy"
+BUILD_AT="/home/deploy/builds"
+
+PRODUCTION_HOSTS="shifumi"
+PRODUCTION_USER="deploy"
+DELIVER_TO="/home/deploy/releases"
+
+pre_erlang_get_and_update_deps() {
+  local _prod_secret_path="/home/deploy/config/prod.secret.exs"
+  if [ "$TARGET_MIX_ENV" = "prod" ]; then
+    __sync_remote "
+      ln -sfn '$_prod_secret_path' '$BUILD_AT/config/prod.secret.exs'
+    "
+  fi
+}
+
+pre_erlang_clean_compile() {
+  status "Preparing assets with: *npm run deploy* and *mix phoenix.digest*"
+  __sync_remote "
+    # runs the commands on the build host
+    [ -f ~/.profile ] && source ~/.profile # load profile (optional)
+
+    # fail if any command fails (recommended)
+    set -e
+
+    # enter the build directory on the build host (required)
+    cd '$BUILD_AT'
+
+    mkdir -p priv/static # required by the phoenix.digest task
+
+    # enter assets
+    cd assets
+
+    # installing npm dependencies
+    npm install
+
+    # building assets
+    npm run deploy
+
+    # digest
+    cd '$BUILD_AT'
+    APP='$APP' MIX_ENV=prod mix phoenix.digest $SILENCE
+  "
+}

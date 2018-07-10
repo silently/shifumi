@@ -1,0 +1,53 @@
+body.about, body.rules {
+
+  color: $color-text;
+
+  background-color: #fff;
+  #shell.wrapper {
+    background-color: #fff;
+  }
+
+  .btn-floating.btn-play {
+    line-height: 56px;
+    padding-left: 4px;
+  }
+
+  h4 {
+    font-family: blocks;
+  }
+
+  h6 {
+    text-decoration: underline;
+  }
+
+  .alternate {
+    background-color: $color-alt-bg;
+  }
+
+  ul li {
+    margin-bottom: 2px;
+  }
+
+  i {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    background: no-repeat center center;
+    background-color: $color-text;
+    background-size: 20px 20px;
+    border-radius: 15px;
+    vertical-align: -8px;
+    &.rock {
+      background-image: url(/images/r.png);
+    }
+    &.paper {
+      background-image: url(/images/p.png);
+    }
+    &.scissors {
+      background-image: url(/images/s.png);
+    }
+    &.well {
+      background-image: url(/images/w.png);
+    }
+  }
+}
