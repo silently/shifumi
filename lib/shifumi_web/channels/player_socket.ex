@@ -12,10 +12,6 @@ defmodule ShifumiWeb.PlayerSocket do
   channel("player:*", ShifumiWeb.PlayerChannel)
   channel("game:*", ShifumiWeb.GameChannel)
 
-  ## Transports
-  transport(:websocket, Phoenix.Transports.WebSocket)
-  # transport :longpoll, Phoenix.Transports.LongPoll
-
   # Socket params are passed from the client and can
   # be used to verify and authenticate a player. After
   # verification, you can put default assigns into

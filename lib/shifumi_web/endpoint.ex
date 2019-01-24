@@ -5,7 +5,7 @@ defmodule ShifumiWeb.Endpoint do
 
   use Phoenix.Endpoint, otp_app: :shifumi
 
-  socket("/socket", ShifumiWeb.PlayerSocket)
+  socket("/socket", ShifumiWeb.PlayerSocket, websocket: true)
 
   # Serve at "/" the static files from "priv/static" directory.
   #
