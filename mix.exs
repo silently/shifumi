@@ -4,7 +4,7 @@ defmodule Shifumi.Mixfile do
   def project do
     [
       app: :shifumi,
-      version: "0.4.4",
+      version: "0.4.5",
       elixir: "~> 1.6",
       elixirc_paths: elixirc_paths(Mix.env()),
       compilers: [:phoenix, :gettext] ++ Mix.compilers(),

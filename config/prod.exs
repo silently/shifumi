@@ -1,6 +1,6 @@
 use Mix.Config
 
-config :shifumi, upload_at: System.get_env("UPLOAD_AT")
+# config :shifumi, upload_at: System.get_env("UPLOAD_AT")
 
 # For production, we often load configuration from external
 # sources, such as your system environment. For this reason,
@@ -33,7 +33,8 @@ config :shifumi, ShifumiWeb.Endpoint,
   watchers: []
 
 # In prod don't use Plug.Static to serve uploaded media
-config :shifumi, ShifumiWeb.Endpoint, serve_uploads: false
+config :shifumi, ShifumiWeb.Endpoint, serve_uploads: true
+# config :shifumi, ShifumiWeb.Endpoint, serve_uploads: false
 
 # Do not print debug messages in production
 # config :logger, level: :debug
