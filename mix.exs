@@ -4,7 +4,7 @@ defmodule Shifumi.Mixfile do
   def project do
     [
       app: :shifumi,
-      version: "0.5.1",
+      version: "0.5.2",
       elixir: "~> 1.6",
       elixirc_paths: elixirc_paths(Mix.env()),
       compilers: [:phoenix, :gettext] ++ Mix.compilers(),
@@ -76,7 +76,7 @@ defmodule Shifumi.Mixfile do
       {:ueberauth_twitter, "~> 0.2"},
       {:oauth, github: "tim/erlang-oauth"},
       {:edeliver, "~> 1.5.0"},
-      {:distillery, "~> 1.5.2"},
+      {:distillery, "~> 2.0.12"},
       # comeonin algorithm
       {:argon2_elixir, "~> 1.2"},
       # dev only
