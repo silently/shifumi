@@ -69,4 +69,5 @@ config :shifumi, Shifumi.Repo,
   password: "dev",
   database: "shifumi_dev",
   hostname: "localhost",
-  pool_size: 10
+  pool_size: 10,
+  migration_timestamps: [type: :naive_datetime_usec]

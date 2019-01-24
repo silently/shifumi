@@ -9,6 +9,7 @@ defmodule Shifumi.Records.Score do
 
   @primary_key {:id, :binary_id, autogenerate: true}
   @foreign_key_type :binary_id
+  @timestamps_opts [type: :naive_datetime_usec]
 
   schema "scores" do
     belongs_to(:player, Shifumi.People.Player)

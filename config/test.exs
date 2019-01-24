@@ -22,4 +22,5 @@ config :shifumi, Shifumi.Repo,
   password: "dev",
   database: "shifumi_test",
   hostname: "localhost",
-  pool: Ecto.Adapters.SQL.Sandbox
+  pool: Ecto.Adapters.SQL.Sandbox,
+  migration_timestamps: [type: :naive_datetime_usec]
