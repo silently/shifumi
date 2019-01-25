@@ -1,7 +1,5 @@
 # Shifumi
 
-Demo here: https://shifumi.io/
-
 Rock Paper Scissors-like game (also known as Shifumi in France) to showcase Elixir/Phoenix and channels, in the context of a simple synced game with possibly many players. Client-side is done with React/Redux (as a progressive web app).
 
 ## Installation
@@ -78,7 +76,7 @@ Games are analyzed to deliver statistics. Round statistics like winning percenta
 
 - CSS animations and transitions
 
-- Demo hosted on a $5/month droplet https://shifumi.io/ (as of July 2018)
+- Demo (was) hosted on a $5/month droplet
 
 ## Enhancements?
 
