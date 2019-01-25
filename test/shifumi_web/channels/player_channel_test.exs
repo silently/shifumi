@@ -110,7 +110,10 @@ defmodule ShifumiWeb.PlayerChannelTest do
       |> Enum.each(fn player_index ->
         seed!(:full_player, %{
           avatar: %{nickname: "player" <> Integer.to_string(player_index)},
-          sheet: %{high_score: player_index, high_score_at: NaiveDateTime.utc_now()}
+          sheet: %{
+            high_score: player_index,
+            high_score_at: NaiveDateTime.truncate(NaiveDateTime.utc_now(), :second)
+          }
         })
       end)
 

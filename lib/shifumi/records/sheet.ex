@@ -6,7 +6,6 @@ defmodule Shifumi.Records.Sheet do
 
   @primary_key {:id, :binary_id, autogenerate: true}
   @foreign_key_type :binary_id
-  @timestamps_opts [type: :naive_datetime_usec]
 
   schema "sheets" do
     # Associations
@@ -86,7 +85,7 @@ defmodule Shifumi.Records.Sheet do
       |> cond_put_change(
         new_score > changeset.data.high_score,
         :high_score_at,
-        NaiveDateTime.utc_now()
+        NaiveDateTime.truncate(NaiveDateTime.utc_now(), :second)
       )
       |> cond_inc_change(well_won?, :wells)
     else

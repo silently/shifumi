@@ -5,7 +5,6 @@ defmodule Shifumi.People.Avatar do
 
   @primary_key {:id, :binary_id, autogenerate: true}
   @foreign_key_type :binary_id
-  @timestamps_opts [type: :naive_datetime_usec]
 
   schema "avatars" do
     # Associations

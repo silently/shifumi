@@ -27,7 +27,7 @@
 
   Shifumi.Records.Sheet.changeset(player.sheet, %{
     high_score: 2 - rem(player_index, 2),
-    high_score_at: NaiveDateTime.utc_now()
+    high_score_at: NaiveDateTime.truncate(NaiveDateTime.utc_now(), :second)
   })
   |> Shifumi.Repo.update()
 

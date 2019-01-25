@@ -17,10 +17,8 @@ config :logger, level: :warn
 
 # Configure your database
 config :shifumi, Shifumi.Repo,
-  adapter: Ecto.Adapters.Postgres,
   username: "dev",
   password: "dev",
   database: "shifumi_test",
   hostname: "localhost",
-  pool: Ecto.Adapters.SQL.Sandbox,
-  migration_timestamps: [type: :naive_datetime_usec]
+  pool: Ecto.Adapters.SQL.Sandbox

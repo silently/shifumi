@@ -1,7 +1,9 @@
 defmodule Shifumi.Repo do
   @moduledoc false
 
-  use Ecto.Repo, otp_app: :shifumi
+  use Ecto.Repo,
+    otp_app: :shifumi,
+    adapter: Ecto.Adapters.Postgres
 
   @doc """
   Dynamically loads the repository url from the

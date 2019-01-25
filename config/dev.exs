@@ -64,10 +64,8 @@ config :phoenix, :stacktrace_depth, 20
 
 # Configure your database
 config :shifumi, Shifumi.Repo,
-  adapter: Ecto.Adapters.Postgres,
   username: "dev",
   password: "dev",
   database: "shifumi_dev",
   hostname: "localhost",
-  pool_size: 10,
-  migration_timestamps: [type: :naive_datetime_usec]
+  pool_size: 10

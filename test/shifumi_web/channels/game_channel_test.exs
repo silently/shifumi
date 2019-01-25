@@ -7,7 +7,7 @@ defmodule ShifumiWeb.GameChannelTest do
   # Helpers
 
   defp create_assigned_socket(player) do
-    socket("player_socket:" <> player.id, %{player_id: player.id})
+    socket(ShifumiWeb.PlayerSocket, "player_socket:" <> player.id, %{player_id: player.id})
   end
 
   # Set up a game with 2 players

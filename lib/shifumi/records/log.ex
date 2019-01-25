@@ -6,8 +6,6 @@ defmodule Shifumi.Records.Log do
   use Ecto.Schema
   alias Shifumi.Records.Log
 
-  @timestamps_opts [type: :naive_datetime_usec]
-
   schema "logs" do
     # Associations
     belongs_to(:winner, Shifumi.People.Player, type: :binary_id)
