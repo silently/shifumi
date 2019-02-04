@@ -76,7 +76,7 @@ Games are analyzed to deliver statistics. Round statistics like winning percenta
 
 - CSS animations and transitions
 
-- Demo (was) hosted on a $5/month droplet
+- Demo is hosted on a $5/month droplet: https://shifumi.alt-g.fr/
 
 ## Enhancements?
 
